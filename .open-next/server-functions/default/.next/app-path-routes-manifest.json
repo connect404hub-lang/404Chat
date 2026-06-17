@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/admin/reset/route": "/api/admin/reset",
+  "/api/auth/login/route": "/api/auth/login",
+  "/api/auth/signup/route": "/api/auth/signup",
+  "/api/chats/route": "/api/chats",
+  "/api/chats/typing/route": "/api/chats/typing",
+  "/api/messages/route": "/api/messages",
+  "/api/stories/route": "/api/stories",
+  "/api/users/route": "/api/users",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/"
+}
