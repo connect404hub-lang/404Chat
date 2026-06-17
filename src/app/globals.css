@@ -1,0 +1,457 @@
+@import "tailwindcss";
+
+/* 
+ * DevConnect Design System Stylesheet (Dracula & Monospace Vibe)
+ */
+
+:root {
+  --bg-app: #1e1f29;
+  --bg-sidebar: #15151e;
+  --bg-header: #282a36;
+  --bg-input: #15151e;
+  --bg-msg-me: #2b4233;
+  --bg-msg-other: #282a36;
+  --border-color: #44475a;
+  --accent-color: #ff79c6;
+  --accent-hover: #ff92df;
+  --text-fg: #f8f8f2;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styles - Hiding Globally for Clean Developer Vibe */
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+
+/* --- DRACULA IDE SYNTAX HIGHLIGHTING --- */
+.hl-container span {
+  font-family: inherit;
+}
+
+.hl-keyword {
+  color: #ff79c6;
+  /* Dracula pink */
+  font-weight: bold;
+}
+
+.hl-string {
+  color: #f1fa8c;
+  /* Dracula yellow */
+}
+
+.hl-comment {
+  color: #6272a4;
+  /* Dracula comment blue-gray */
+  font-style: italic;
+}
+
+.hl-number {
+  color: #bd93f9;
+  /* Dracula purple */
+}
+
+.hl-function {
+  color: #50fa7b;
+  /* Dracula green */
+}
+
+/* Custom animations for glows and logins */
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 240, 255, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 240, 255, 0.15);
+  }
+}
+
+.glow-box-cyan {
+  animation: glow-pulse 3s infinite ease-in-out;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 2;
+}
+
+/* Clean, code sharing message formatting */
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* --- Custom Fluid Avatar Animations --- */
+@keyframes terminal-blink {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 1px #39ff14);
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #39ff14);
+  }
+}
+
+.animate-terminal-icon {
+  animation: terminal-blink 1.8s infinite ease-in-out;
+}
+
+@keyframes cpu-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 1px #00f0ff);
+  }
+
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 6px #00f0ff);
+  }
+}
+
+.animate-cpu-icon {
+  animation: cpu-pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes shield-glow {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 1px #bd93f9);
+  }
+
+  50% {
+    transform: scale(1.04) rotate(3deg);
+    filter: drop-shadow(0 0 5px #bd93f9);
+  }
+}
+
+.animate-shield-icon {
+  animation: shield-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes braces-slide {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-4deg);
+  }
+}
+
+.animate-braces-icon {
+  animation: braces-slide 2s infinite ease-in-out;
+}
+
+@keyframes db-stack {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-db-icon {
+  animation: db-stack 1.6s infinite ease-in-out;
+}
+
+@keyframes bug-wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes bug-jitter {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(-1px, 1px) rotate(-2deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(2deg);
+  }
+
+  60% {
+    transform: translate(-1.5px, -0.5px) rotate(-1.5deg);
+  }
+
+  80% {
+    transform: translate(1px, 1.5px) rotate(1.5deg);
+  }
+}
+
+.animate-bug-icon {
+  animation: bug-wiggle 1s infinite ease-in-out;
+}
+
+.animate-bug-icon:hover {
+  animation: bug-jitter 0.15s infinite linear;
+}
+
+/* Custom Developer Typing Indicator Dot Blink */
+@keyframes dev-dot-blink {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.hl-typing-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #22d3ee;
+  /* cyan-400 */
+  animation: dev-dot-blink 1.4s infinite ease-in-out;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+}
+
+.hl-typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hl-typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hl-typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Custom Modal Fade-in and Slide-up Animations */
+@keyframes modal-backdrop-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-box-slide {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-backdrop-fade {
+  animation: modal-backdrop-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-slide {
+  animation: modal-box-slide 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- DEV CONNECT DYNAMIC THEME ENGINE --- */
+body[data-theme="dracula"] {
+  --bg-app: #1e1f29;
+  --bg-sidebar: #15151e;
+  --bg-header: #282a36;
+  --bg-input: #15151e;
+  --bg-msg-me: #2b4233;
+  --bg-msg-other: #282a36;
+  --border-color: #44475a;
+  --accent-color: #ff79c6;
+  --accent-hover: #ff92df;
+  --text-fg: #f8f8f2;
+}
+
+body[data-theme="onedark"] {
+  --bg-app: #1e1e24;
+  --bg-sidebar: #18181c;
+  --bg-header: #21252b;
+  --bg-input: #18181c;
+  --bg-msg-me: #223729;
+  --bg-msg-other: #2c313c;
+  --border-color: #3e4451;
+  --accent-color: #61afef;
+  --accent-hover: #82bfff;
+  --text-fg: #abb2bf;
+}
+
+body[data-theme="matrix"] {
+  --bg-app: #000000;
+  --bg-sidebar: #020502;
+  --bg-header: #040a04;
+  --bg-input: #000000;
+  --bg-msg-me: #002c00;
+  --bg-msg-other: #051405;
+  --border-color: #008800;
+  --accent-color: #00ff00;
+  --accent-hover: #33ff33;
+  --text-fg: #00ff00;
+}
+
+body[data-theme="monokai"] {
+  --bg-app: #272822;
+  --bg-sidebar: #1e1f1c;
+  --bg-header: #2e2f30;
+  --bg-input: #1e1f1c;
+  --bg-msg-me: #38491c;
+  --bg-msg-other: #3e3d32;
+  --border-color: #49483e;
+  --accent-color: #a6e22e;
+  --accent-hover: #bbf743;
+  --text-fg: #f8f8f2;
+}
+
+body[data-theme="github"] {
+  --bg-app: #0d1117;
+  --bg-sidebar: #010409;
+  --bg-header: #161b22;
+  --bg-input: #010409;
+  --bg-msg-me: #143220;
+  --bg-msg-other: #21262d;
+  --border-color: #30363d;
+  --accent-color: #58a6ff;
+  --accent-hover: #79c0ff;
+  --text-fg: #c9d1d9;
+}
+
+body[data-theme="cyberpunk"] {
+  --bg-app: #0d0f1b;
+  --bg-sidebar: #06070c;
+  --bg-header: #131627;
+  --bg-input: #06070c;
+  --bg-msg-me: #2d103b;
+  --bg-msg-other: #191c34;
+  --border-color: #fcee0a;
+  --accent-color: #00f0ff;
+  --accent-hover: #ff0055;
+  --text-fg: #00f0ff;
+}
+
+body[data-theme="synthwave"] {
+  --bg-app: #2b213a;
+  --bg-sidebar: #241b2f;
+  --bg-header: #2e2640;
+  --bg-input: #241b2f;
+  --bg-msg-me: #254432;
+  --bg-msg-other: #37294d;
+  --border-color: #3e3057;
+  --accent-color: #ff7edb;
+  --accent-hover: #fede5d;
+  --text-fg: #f0efe2;
+}
+
+/* Theme class bindings */
+.bg-theme-bg { background-color: var(--bg-app) !important; }
+.bg-theme-sidebar { background-color: var(--bg-sidebar) !important; }
+.bg-theme-header { background-color: var(--bg-header) !important; }
+.bg-theme-input { background-color: var(--bg-input) !important; }
+.bg-theme-msg-me { background-color: var(--bg-msg-me) !important; }
+.bg-theme-msg-other { background-color: var(--bg-msg-other) !important; }
+.border-theme { border-color: var(--border-color) !important; }
+.border-theme-accent { border-color: var(--accent-color) !important; }
+.text-theme-accent { color: var(--accent-color) !important; }
+.text-theme-fg { color: var(--text-fg) !important; }
+.text-theme-accent-hover:hover { color: var(--accent-hover) !important; }
+.bg-theme-accent { background-color: var(--accent-color) !important; }
+.hover\:bg-theme-accent-hover:hover { background-color: var(--accent-hover) !important; }
+
+/* CRT Phosphor Scanline Overlay Animation Styles */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
+  background-size: 100% 4px, 6px 100%;
+  z-index: 999999;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.13; }
+  50% { opacity: 0.16; }
+  100% { opacity: 0.12; }
+}
+
+.crt-overlay-active {
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* Custom prompt cursor blinking */
+.animate-cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--accent-color); }
+}
+
+/* Custom glow borders for developer dashboard */
+.glow-border-theme {
+  box-shadow: 0 0 10px var(--accent-color);
+}
