@@ -9,4 +9,5 @@
         "directory": ".open-next/assets",
         "binding": "ASSETS"
     }
+    // Set MONGODB_URI secret via: npx wrangler secret put MONGODB_URI
 }

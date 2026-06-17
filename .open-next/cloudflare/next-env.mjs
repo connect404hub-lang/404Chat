@@ -1,3 +1,3 @@
-export const production = {};
-export const development = {};
-export const test = {};
+export const production = {"MONGODB_URI":"mongodb://sanjai:sanjai30812@ac-zd6hyln-shard-00-00.huoyyod.mongodb.net:27017,ac-zd6hyln-shard-00-01.huoyyod.mongodb.net:27017,ac-zd6hyln-shard-00-02.huoyyod.mongodb.net:27017/devconnect?ssl=true&replicaSet=atlas-qy6hpu-shard-0&authSource=admin&tlsAllowInvalidCertificates=true"};
+export const development = {"MONGODB_URI":"mongodb://sanjai:sanjai30812@ac-zd6hyln-shard-00-00.huoyyod.mongodb.net:27017,ac-zd6hyln-shard-00-01.huoyyod.mongodb.net:27017,ac-zd6hyln-shard-00-02.huoyyod.mongodb.net:27017/devconnect?ssl=true&replicaSet=atlas-qy6hpu-shard-0&authSource=admin&tlsAllowInvalidCertificates=true"};
+export const test = {"MONGODB_URI":"mongodb://sanjai:sanjai30812@ac-zd6hyln-shard-00-00.huoyyod.mongodb.net:27017,ac-zd6hyln-shard-00-01.huoyyod.mongodb.net:27017,ac-zd6hyln-shard-00-02.huoyyod.mongodb.net:27017/devconnect?ssl=true&replicaSet=atlas-qy6hpu-shard-0&authSource=admin&tlsAllowInvalidCertificates=true"};

@@ -103,4 +103,3 @@ const StorySchema = new Schema(
 StorySchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
 export const Story = mongoose.models.Story || mongoose.model("Story", StorySchema);
-
